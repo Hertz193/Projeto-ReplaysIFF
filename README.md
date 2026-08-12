@@ -26,7 +26,7 @@ O projeto utiliza câmeras IP conectadas a Raspberry Pis para gravar continuamen
                 Raspberry Pi
             (Captura da câmera)
                      │
-                     │ Upload HTTP
+                     │ Upload 
                      ▼
               FastAPI (Servidor)
           ┌───────────────────────┐
