@@ -4,7 +4,8 @@ from camera.master_cam import MasterCam
 
 # Aqui ocorre a inicialização do sistema
 
-cam = MasterCam(0)  # 0 para webcam e 1 para câmera conectada na porta USB, para câmera wireless, troque pelo IP (no formato: http://ip_da_câmera/video ou rtsp://usuario:senha@ip_da_câmera/porta) que a câmera estiver transmitindo
+cam = MasterCam(0) # 0 para webcam e 1 para câmera conectada na porta USB, para câmera wireless, troque pelo IP (no formato: http://ip_da_câmera/video ou rtsp://usuario:senha@ip_da_câmera/porta) que a câmera estiver transmitindo
+
 
 while True:
     cam.update()
@@ -18,11 +19,15 @@ while True:
     if key == ord('s'): # será trocado pelo botão no hardware do Raspberry Pi, por enquanto é o 's' do teclado (save)
         filetime = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         filename = f"replay_{filetime}.mp4"
-        
+                
         cam.save_replay(filename)
         cam.send_replay(filename)
-    elif key == 27:  # ESC para sair e finalizar o programa
+
+    elif key == ord('esc'):  # ESC para sair e finalizar o programa
         break
 
-cam.camera.release()
+cam.release()
 cv.destroyAllWindows()
+
+print("Programa finalizado.")
+    
