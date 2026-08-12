@@ -101,7 +101,7 @@ git clone <url-do-repositório>
 Entre na pasta:
 
 ```bash
-cd ReplaySystem
+cd Projeto-ReplaysIFF
 ```
 
 Crie um ambiente virtual.
@@ -110,7 +110,7 @@ Crie um ambiente virtual.
 
 ```bash
 python -m venv venv
-venv\Scripts\activate
+venv\Scripts\Activate.ps1
 ```
 
 ### Linux
@@ -143,7 +143,7 @@ uvicorn api:app --host 0.0.0.0 --port 8000
 ### 3. Inicie a interface
 
 ```bash
-streamlit run app.py --server.address 0.0.0.0
+streamlit run interface.py --server.address 0.0.0.0
 ```
 
 ---
